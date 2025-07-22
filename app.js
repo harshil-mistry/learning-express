@@ -12,6 +12,17 @@ app.get('/', (req, res)=>{
     res.sendFile(__dirname+"/home.html")
 })
 
+app.get('/marksheet', (req, res)=>{
+    res.render("marksheet")
+})
+
+app.post('/calcmarksheet', (req, res)=>{
+    m1 = req.body.m1
+    m2 = req.body.m2
+    sum = parseInt(m1) + parseInt(m2)
+    res.render('result', {m1:m1, m2:m2, sum:sum})
+})
+
 app.get('/sum', (req, res) => {
     res.sendFile(__dirname + '/sum.html')
 })
