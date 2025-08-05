@@ -1,4 +1,11 @@
 const express = require('express')
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/Vadodara').
+then(res=>{console.log("Connected successfully")})
+.catch(err=>{console.log("Error occurred", err)})
+
+const Cat = mongoose.model('Cat', {num1:Number, num2:Number})
+
 const app = express()
 const port = 3000
 
@@ -34,8 +41,14 @@ app.get('/ejs', (req, res)=>{
 app.get('/processsum', (req, res) => {
     num1 = req.query.num1
     num2 = req.query.num2
+    const kitty = new Cat({num1:num1, num2:num2})
+    kitty.save().then(()=>console.log("Saved bhai"))
     sum = parseInt(num1) + parseInt(num2)
     res.send(`The sum for ${num1} & ${num2} is : ${sum}`)
+})
+
+app.get('/api/nums', (req, res)=>{
+    Cat.find().then(data=>{res.json(data)})
 })
 
 app.get('/about', (req, res)=>{

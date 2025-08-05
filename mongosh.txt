@@ -1,0 +1,23 @@
+mongosh
+show dbs : Show all dbs
+use "dbname" : Creates a new or switches to a new one
+show collections : All collections in a db
+
+db.createCollection("Student") : Creates a new collection
+
+db.collectionName.drop()
+
+db.student.find() : Filtering data
+
+db.student.insert({'name':'demo'})
+
+db.student.insertOne({'name':'demo2'})
+
+db.student.insertMany({},{})
+
+db.student.find().limit(2)
+
+db.student.find().sort({'StudentID':-1}) -> -1 for descending, 1 for ascending
+
+[].delete()
+[].deleteOne()
