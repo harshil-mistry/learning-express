@@ -32,4 +32,26 @@ router.post('/process_student', function(req, res, next) {
   })
 });
 
+router.get('/view-student-api', (req, res, next)=>{
+  data = StudentModel.find()
+  .then((data)=>{
+    res.json(data)
+  }
+  )
+  .catch(()=>{
+    res.send("Data nathi madto bhai")
+  })
+})
+
+router.get('/view-student', (req, res, next)=>{
+  data = StudentModel.find()
+  .then((data)=>{
+    res.render('view-student', {data:data})
+  }
+  )
+  .catch(()=>{
+    res.send("Data nathi madto bhai")
+  })
+})
+
 module.exports = router;

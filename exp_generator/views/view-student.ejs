@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student data</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+            </tr>
+            <% for (var i=0; i<data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].name %>
+                    </td>
+                    <td>
+                        <%= data[i].email %>
+                    </td>
+                    <td>
+                        <%= data[i].contact %>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>
