@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb://127.0.0.1:27017/Express-Generator')
 .then(()=>{console.log("DB Connected bro")})
 .catch((err)=>console.log("Error aaivi che bhai -> ", err))
 
